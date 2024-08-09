@@ -26,9 +26,19 @@ public class BouncingBall extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (ballX + ballDeltaX < 0 || ballX + ballDiameter + ballDeltaX > getWidth()) {
             ballDeltaX *= -1; // Invertir la dirección horizontal si choca con el borde izquierdo o derecho
+            balldiameter=balldiameter-1;
+            if (balldiameter==1)
+            {
+                balldiameter=30;
+            }
         }
         if (ballY + ballDeltaY < 0 || ballY + ballDiameter + ballDeltaY > getHeight()) {
             ballDeltaY *= -1; // Invertir la dirección vertical si choca con el borde superior o inferior
+            balldiameter=balldiameter-1;
+            if (balldiameter==1)
+            {
+                balldiameter=30;
+            }
         }
 
         ballX += ballDeltaX; // Actualizar la posición horizontal de la pelota
